@@ -38,7 +38,7 @@ function switchPlayer() {
 function rollDice() {
 	if (isPlaying) {
 		const randomDiceValue = Math.trunc(Math.random() * 6) + 1;
-		diceEl.src = `./dice-${randomDiceValue}.png`;
+		diceEl.src = `./img/dice-${randomDiceValue}.png`;
 		diceEl.classList.remove('hidden');
 		if (randomDiceValue !== 1) {
 			currentScore += randomDiceValue;
@@ -58,7 +58,7 @@ function holdScore() {
 		document.getElementById(`score--${activePlayer}`).textContent =
 			scores[activePlayer];
 		// check if cs >= 100 else switch player
-		if (scores[activePlayer] >= 10) {
+		if (scores[activePlayer] >= 100) {
 			document
 				.querySelector(`.player--${activePlayer}`)
 				.classList.add('player--winner');
